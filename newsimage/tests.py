@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 # Create your tests here.
-from .models import Location, tags
+from .models import Location, tags, Image
 
 class LocationTestClass(TestCase):
 
@@ -29,3 +29,15 @@ class LocationTestClass(TestCase):
     def tearDown(self):
         Location.objects.all().delete()
         tags.objects.all().delete()
+        Image.objects.all.delete()
+
+
+class ImageTestClass(TestCase):
+
+      # Set up method the test for images and instantiating the location object
+
+    def setUp(self):
+        self. = Location(name='Nairobi')
+
+
+

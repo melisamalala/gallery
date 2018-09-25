@@ -28,4 +28,35 @@ class tags(models.Model):
     def delete_tags(self):
         self.delete()
 
+class Image(models.Model):
+    image=models.ImageField(upload_to='picture/')
+    name = models.CharField(max_length=60)
+    description=models.TextField()
+    location=models.ManyToManyField(Location, blank=True)
+    tags=models.ManyToManyField(tags, blank=True)
 
+    def __str__(self):
+        return self.name
+
+
+    def save_image(self):
+        self.save()
+
+
+    def delete_image(self):
+        self.delete()
+
+    @classmethod
+    def update_image(self):
+
+
+    @classmethod
+    def get_image_by_id(self):
+
+
+    @classmethod
+    def search_image(self):
+
+
+    @classmethod
+    def filter_image_by_id(self):

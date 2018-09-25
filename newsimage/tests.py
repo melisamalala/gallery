@@ -17,4 +17,15 @@ class LocationTestClass(TestCase):
 
         self.assertTrue(isinstance(self.nairobi, Location))
 
+    #Testing Save method
 
+    def test_save_method(self):
+        self.nairobi.save_location()
+        locations = Location.objects.all()
+        self.assertTrue(len(locations)>0)
+
+    #Testing Delete method for deleting the classes Location and Tags
+
+    def tearDown(self):
+        Location.objects.all().delete()
+        tags.objects.all().delete()

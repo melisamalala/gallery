@@ -1,5 +1,5 @@
 """
-WSGI config for galleryimage project.
+WSGI config for galleryimages project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "galleryimage.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "galleryimages.settings")
 
 application = get_wsgi_application()

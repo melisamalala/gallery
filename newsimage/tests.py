@@ -1,5 +1,6 @@
 from django.test import TestCase
 
+
 # Create your tests here.
 from .models import Location, tags, Image
 from django.core.files.uploadedfile import SimpleUploadedFile
@@ -73,4 +74,10 @@ class ImageTestClass(TestCase):
     def test_delete_image(self):
         Image.delete_image_by_id(self.test_image.id)
         self.assertEqual(len(Image.objects.all()), 0)
+
+    def test_get_news_today(self):
+        today_news = Image.todays_news()
+        self.assertTrue(len(today_news) > 0)
+
+
 

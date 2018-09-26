@@ -70,7 +70,7 @@ class Image(models.Model):
 
     @classmethod
     def search_image(cls, search_term):
-        pictures = cls.objects.filter(description__contains=search_term)
+        pictures = cls.objects.filter(title__icontains=search_term)
         return pictures
 
     @classmethod

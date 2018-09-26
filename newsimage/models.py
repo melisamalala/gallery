@@ -12,8 +12,11 @@ class Location(models.Model):
     def save_location(self):
         self.save()
 
-    def delete_location(self):
-        self.delete()
+    # def delete_location(self):
+    #     self.delete()
+
+    def __str__(self):
+        return self.name
 
 
 class tags(models.Model):
@@ -28,35 +31,50 @@ class tags(models.Model):
     def delete_tags(self):
         self.delete()
 
+    def __str__(self):
+        return self.name
+
+
 class Image(models.Model):
     image=models.ImageField(upload_to='picture/')
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=40)
     description=models.TextField()
-    location=models.ManyToManyField(Location, blank=True)
+    location=models.ForeignKey(Location, blank=True)
     tags=models.ManyToManyField(tags, blank=True)
 
     def __str__(self):
         return self.name
 
-
     def save_image(self):
         self.save()
 
-
-    def delete_image(self):
-        self.delete()
+    @classmethod
+    def delete_image_by_id(cls, id):
+        pictures = cls.objects.filter(pk=id)
+        pictures.delete()
 
     @classmethod
-    def update_image(self):
-
-
-    @classmethod
-    def get_image_by_id(self):
-
+    def get_image_by_id(cls, id):
+        pictures = cls.objects.get(pk=id)
+        return pictures
 
     @classmethod
-    def search_image(self):
-
+    def filter_by_tag(cls, tags):
+        pictures = cls.objects.filter(tags=tags)
+        return pictures
 
     @classmethod
-    def filter_image_by_id(self):
+    def filter_by_location(cls, location):
+        pictures = cls.objects.filter(location=location)
+        return pictures
+
+    @classmethod
+    def search_image(cls, search_term):
+        pictures = cls.objects.filter(description__contains=search_term)
+        return pictures
+
+    @classmethod
+    def update_image(cls, id):
+        pictures=cls.objects.filter(id=id).update(id=id)
+        return pictures
+

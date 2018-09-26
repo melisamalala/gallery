@@ -22,7 +22,7 @@ def convert_dates(dates):
     day = days[day_number]
     return day
 
-def news_of_day(request):
+def news_today(request):
     date = dt.date.today()
     return render(request, 'all-images/today-images.html', {"date": date,})
 
@@ -40,7 +40,7 @@ def past_days_news(request, past_date):
         assert False
 
     if date == dt.date.today():
-        return redirect(news_of_day)
+        return redirect(news_today)
 
     return render(request, 'all-images/past-images.html', {"date": date})
 

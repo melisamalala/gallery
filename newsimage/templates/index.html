@@ -14,8 +14,6 @@
 </div>
 </div>
 
-
-
 <div class="row">
 
 <div class="col-md-6 col-lg-4 col-sm-6">
@@ -23,7 +21,7 @@
 
     {% for image in pictures %}
       <img src="{{image.image.url}}"
-           data-target="#deleteModal{{image.id}}" data-toggle="modal"
+           data-target="#imageModal{{image.id}}" data-toggle="modal"
            alt="" class="img-fluid" id="eachimage" style="height:600px;width:500px;">
     {% endfor %}
   </section>
@@ -33,34 +31,36 @@
 
   <!--modal-->
     {% for image in pictures %}
-      <div class="modal fade" id="deleteModal{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal fade" id="imageModal{{image.id}}" tabindex="-1"
+           role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-              <img src="{{image.image.url}}" data-target="#deleteModal{{image.id}}"
+              <img src="{{image.image.url}}" data-target="#imageModal{{image.id}}"
                    data-toggle="modal" alt="" style="height:600px;width:500px;">
               <div class="modal-header">
               <h4 id="modal-text text-center">{{image.name}}</h4>
+                  <h4 style="color:blue;" id="modal-text ">{{image.location}}</h4>
                   {% for tag in image.tags.all %}
 
-                <ul style="color:red;"><b> #{{ tag.name }}</b> </ul>
+                <button class="btn btn-lg btn-success" style="color:white;"> #{{ tag.name }}</button>
 
                  {% endfor %}
             </div>
 
             <div class="modal-footer">
 
-              <input class="form-control" type="text" value="{{image.image.url}}" id="thislinkhere">
-              <a onclick="copyLink()"><button type="button"  class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy Photo Link</button></a>
+              <input class="form-control" type="text" value="{{image.image.url}}"
+                     id="thislinkhere">
+              <a onclick="copyLink()">
+                  <button type="button"
+                                              class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy Photo Link</button></a>
             </div>
             <div class="modal-footer">
 
               <h5 id=modal-text>{{image.description}}</h5>
 
-
-
-                <!--<p>{{image.tags.all|join:", "}}</p>-->
-
-              <button type="button" class="btn btn-outline-secondary my-2 my-sm-0" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-outline-secondary
+              my-2 my-sm-0" data-dismiss="modal">Close</button>
 
             </div>
           </div>
@@ -85,4 +85,3 @@ function copyLink() {
     {% endfor %}
 
    {% endblock %}
-

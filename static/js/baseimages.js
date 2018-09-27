@@ -1,6 +1,14 @@
+
 function copyLink() {
-  var copyText = document.getElementById("link");
+  /* Get the text field */
+  var copyText = document.getElementById("thislinkhere");
+
+  /* Select the text field */
   copyText.select();
-  document.execCommand("Copy");
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
   alert("Copied the text: " + copyText.value);
 }

@@ -1,26 +1,50 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Spirax" rel="stylesheet">
+
+<div class="container">
+
+<div class="jumbotron text-center" style="background-color:white;">
+
+<h1 class="h1" style="font-family: 'Spirax', cursive;">The Image Gallery </h1>
+
+<p style="font-family: 'Dancing Script', cursive;">Beautiful Images For Your Inspiration</p>
+
+</div>
+</div>
+
+
+
+<div class="row">
+
+<div class="col-md-6 col-lg-4 col-sm-6">
 <section id="imagestoedit">
 
     {% for image in pictures %}
-      <img src="{{image.image.url}}" data-target="#deleteModal{{image.id}}" data-toggle="modal" alt="">
+      <img src="{{image.image.url}}"
+           data-target="#deleteModal{{image.id}}" data-toggle="modal"
+           alt="" class="img-fluid" id="eachimage" style="height:600px;width:500px;">
     {% endfor %}
   </section>
+
+</div>
+</div>
 
   <!--modal-->
     {% for image in pictures %}
       <div class="modal fade" id="deleteModal{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-              <img src="{{image.image.url}}" data-target="#deleteModal{{image.id}}" data-toggle="modal" alt="">
+              <img src="{{image.image.url}}" data-target="#deleteModal{{image.id}}"
+                   data-toggle="modal" alt="" style="height:600px;width:500px;">
               <div class="modal-header">
               <h4 id="modal-text text-center">{{image.name}}</h4>
             </div>
 
             <div class="modal-footer">
 
-              <input class="form-control" type="text" value="{{image.image.url}}" id="link">
+              <input class="form-control" type="text" value="{{image.image.url}}" id="thislinkhere">
               <a onclick="copyLink()"><button type="button"  class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy Photo Link</button></a>
             </div>
             <div class="modal-footer">
@@ -33,6 +57,22 @@
           </div>
         </div>
       </div>
+
+<script>
+function copyLink() {
+  /* Get the text field */
+  var copyText = document.getElementById("thislinkhere");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+</script>
     {% endfor %}
 
    {% endblock %}

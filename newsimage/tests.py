@@ -47,7 +47,7 @@ class ImageTestClass(TestCase):
         self.funny= tags.objects.create(name='funny')
 
 
-        self.test_image = Image(image='imagesef',
+        self.test_image = Image.objects.create(image='imagesef',
                                 name='cat',
                                 description='This is a description',
                                 location=self.nairobi,
@@ -74,10 +74,5 @@ class ImageTestClass(TestCase):
     def test_delete_image(self):
         Image.delete_image_by_id(self.test_image.id)
         self.assertEqual(len(Image.objects.all()), 0)
-
-    def test_get_news_today(self):
-        today_news = Image.todays_news()
-        self.assertTrue(len(today_news) > 0)
-
 
 

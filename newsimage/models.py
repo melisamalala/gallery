@@ -36,7 +36,7 @@ class tags(models.Model):
 
 
 class Image(models.Model):
-    image=models.ImageField(upload_to='image/')
+    image=models.ImageField(upload_to='picture/')
     name = models.CharField(max_length=40)
     description=models.TextField()
     location=models.ForeignKey(Location, blank=True)
@@ -70,7 +70,7 @@ class Image(models.Model):
 
     @classmethod
     def search_image(cls, search_term):
-        pictures = cls.objects.filter(title__icontains=search_term)
+        pictures = cls.objects.filter(description__icontains=search_term)
         return pictures
 
     @classmethod

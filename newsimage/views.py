@@ -1,22 +1,15 @@
-
 from django.shortcuts import render, redirect
 from .models import Image,Location,tags
-
-# Create your views here.
-
-
 from django.http  import HttpResponse, Http404
-import datetime as dt
 
-# Create your views here.
-def welcome(request):
-    return render(request, 'welcome.html')
-
+# Views
 tags = tags.objects.all()
+
+
 def home_images(request):
     # Display all images here:
 
-    images = Image.objects.all()
+    # images = Image.objects.all()
 
     locations = Location.objects.all()
 
@@ -27,7 +20,7 @@ def home_images(request):
     elif request.GET.get('tags'):
         pictures = Image.filter_by_tag(request.GET.get('tags'))
 
-    elif request.GET.get('query'):
+    elif request.GET.get('search_term'):
         pictures = Image.search_image(request.GET.get('search_term'))
 
     else:

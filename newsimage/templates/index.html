@@ -51,6 +51,14 @@
 
               <h5 id=modal-text>{{image.description}}</h5>
 
+                {% for tag in image.tags.all %}
+
+                <li> {{ tag.name }} </li>
+
+                 {% endfor %}
+
+                <!--<p>{{image.tags.all|join:", "}}</p>-->
+
               <button type="button" class="btn btn-outline-secondary my-2 my-sm-0" data-dismiss="modal">Close</button>
 
             </div>

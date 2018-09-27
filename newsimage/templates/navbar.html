@@ -4,6 +4,36 @@
         <a class="navbar-brand" href="{% url 'homePage' %}">Image Gallery By Melissa Malala</a>
       </div>
 
+
+      <!--Dropdown for filtering by location or category-->
+
+      <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tags
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for tag in tags %}
+                <a class="dropdown-item" href="/?category={{tag.id}}">{{tag.name}}</a>
+                <div class="dropdown-divider"></div>
+                {% endfor %}
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Location
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for location in locations %}
+                <a class="dropdown-item" href="/?location={{location.id}}">{{location.name}}</a>
+                <div class="dropdown-divider"></div>
+                {% endfor %}
+              </div>
+            </li>
+
+
+      <!--end of dropdown for filtering by location or category-->
+
       <!-- Adding a search form  -->
       <div class="col-sm-4 col-md-4 navbar-right">
 

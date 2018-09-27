@@ -5,15 +5,12 @@ from django.http  import HttpResponse, Http404
 # Views
 tags = tags.objects.all()
 
-
 def home_images(request):
     # Display all images here:
 
     # images = Image.objects.all()
 
     locations = Location.objects.all()
-
-
 
     if request.GET.get('location'):
         pictures = Image.filter_by_location(request.GET.get('location'))

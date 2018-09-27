@@ -1,16 +1,20 @@
-<nav class="navbar navbar-inverse">
+<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Charmonman|Dancing+Script|Spirax" rel="stylesheet">
+
+<nav class="navbar " style="background-color:#f0a020;">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="{% url 'homePage' %}">Image Gallery
-            <br>by Melissa Malala</a>
+        <a style="font-family: 'Archivo Narrow', sans-serif;"class="navbar-brand" href="{% url 'homePage' %}">The Image Gallery
+           </a>
       </div>
 
 
       <!--Dropdown for filtering by location or category-->
 
-      <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tags
+      <ul class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                 data-toggle="dropdown" aria-haspopup="true"
+                 style="font-family: 'Archivo Narrow', sans-serif;"aria-expanded="false">
+                FILTER BY CATEGORY
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for tag in tags %}
@@ -18,11 +22,13 @@
                 <div class="dropdown-divider"></div>
                 {% endfor %}
               </div>
-            </li>
+            </ul>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Location
+            <ul class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#"
+                 id="navbarDropdown" role="button" data-toggle="dropdown"
+                 style="font-family: 'Archivo Narrow', sans-serif;" aria-haspopup="true" aria-expanded="false">
+               FILTER BY LOCATION
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for location in locations %}
@@ -30,7 +36,7 @@
                 <div class="dropdown-divider"></div>
                 {% endfor %}
               </div>
-            </li>
+            </ul>
 
 
       <!--end of dropdown for filtering by location or category-->

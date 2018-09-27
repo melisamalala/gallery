@@ -14,6 +14,7 @@ def home_images(request):
     locations = Location.objects.all()
 
 
+
     if request.GET.get('location'):
         pictures = Image.filter_by_location(request.GET.get('location'))
 

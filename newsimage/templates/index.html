@@ -40,6 +40,11 @@
                    data-toggle="modal" alt="" style="height:600px;width:500px;">
               <div class="modal-header">
               <h4 id="modal-text text-center">{{image.name}}</h4>
+                  {% for tag in image.tags.all %}
+
+                <ul style="color:red;"><b> #{{ tag.name }}</b> </ul>
+
+                 {% endfor %}
             </div>
 
             <div class="modal-footer">
@@ -51,11 +56,7 @@
 
               <h5 id=modal-text>{{image.description}}</h5>
 
-                {% for tag in image.tags.all %}
 
-                <li style="color:red;"><b> {{ tag.name }}</b> </li>
-
-                 {% endfor %}
 
                 <!--<p>{{image.tags.all|join:", "}}</p>-->
 

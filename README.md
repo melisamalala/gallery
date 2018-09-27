@@ -41,6 +41,7 @@ fork the project and make a pull request.
 
 ## Authors
 MELISSA MALALA
+Twing-It Analytics
 
 ##License
 This project is licensed under the MIT License - see the LICENSE.md file for details

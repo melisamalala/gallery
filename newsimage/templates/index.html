@@ -15,7 +15,6 @@
 </div>
 
 
-
 <div class="container">
 
 <div class="card-columns">
@@ -52,9 +51,9 @@
 
               <input class="form-control" type="text" value="{{image.image.url}}"
                      id="thislinkhere">
-              <a onclick="copyLink()">
-                  <button type="button"
-                                              class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy Photo Link</button></a>
+              <!--<a onclick="copyLink()">-->
+                  <button id="copyData" type="button" onclick="copyLink(this.name)" name="{{image.image.url}}" class="btn btn-outline-secondary my-2 my-sm-0 link-btn">Copy Photo Link</button>
+                <!--</a>-->
             </div>
             <div class="modal-footer">
 
@@ -69,18 +68,19 @@
       </div>
 
 <script>
-function copyLink() {
+function copyLink(url) {
+
   /* Get the text field */
-  var copyText = document.getElementById("thislinkhere");
+  <!--var copyText = document.getElementById("copyData");-->
 
-  /* Select the text field */
-  copyText.select();
+  <!--/* Select the text field */-->
+  <!--url.select();-->
 
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
+  <!--/* Copy the text inside the text field */-->
+  <!--document.execCommand("copy");-->
 
-  /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
+  <!--/* Alert the copied text */-->
+  alert("Copid the text: " + copyText.value);
 }
 </script>
     {% endfor %}

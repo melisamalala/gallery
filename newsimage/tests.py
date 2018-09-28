@@ -67,6 +67,11 @@ class ImageTestClass(TestCase):
     def test_save_image(self):
         self.assertEqual(len(Image.objects.all()), 1)
 
+
+
+
+
+
     # Tear down method
     def tearDown(self):
         Image.objects.all().delete()

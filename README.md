@@ -43,8 +43,8 @@ fork the project and make a pull request.
 MELISSA MALALA
 Twing-It Analytics
 
-##License
+## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-##Acknowledgments
+## Acknowledgments
 Moringa School

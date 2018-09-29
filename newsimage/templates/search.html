@@ -4,9 +4,9 @@
 
   <div class="row">
     {% if pictures%}
-      <h2> Here are {{ image|length }} images of your search term! {{message}}</h2>
+      <h2 style="font-family: 'Kodchasan', sans-serif;color:white;"> Here are images of your search term: {{message}}</h2>
     {% else %}
-      <h2> It appears that there are 0 images for your search term, please try again {{message}}</h2>
+      <h2 style="font-family: 'Kodchasan', sans-serif;color:white;"> It appears that there are 0 images for your search term {{message}}, please try again. </h2>
     {% endif %}
 
   </div>

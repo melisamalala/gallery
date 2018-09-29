@@ -5,11 +5,11 @@
 
 <div class="container">
 
-<div class="jumbotron text-center" style="background-color:white;">
+<div class="jumbotron text-center" style="background-color:black;">
 
-<h1 class="h1" style="font-family: 'Abril Fatface', cursive; color:black;font-size:70px;">The Image Gallery </h1>
+<h1 class="h1" style="font-family: 'Abril Fatface', cursive; color:white;font-size:70px;">The Image Gallery </h1>
 
-<p style="font-family: 'Kodchasan', sans-serif;">The delicate balance of mentoring someone is not creating them in your own image, but giving them the opportunity to create themselves.</p>
+<p style="font-family: 'Kodchasan', sans-serif;color:white;">The delicate balance of mentoring someone is not creating them in your own image, but giving them the opportunity to create themselves.</p>
 
 </div>
 </div>
@@ -35,7 +35,7 @@
            role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-              <img src="{{image.image.url}}" data-target="#imageModal{{image.id}}"
+              <img src="{{image.image.url}}"
                    data-toggle="modal" alt="" style="height:600px;width:500px;">
               <div class="modal-header">
               <h4 id="modal-text text-center">{{image.name}}</h4>

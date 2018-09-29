@@ -4,7 +4,7 @@ A Gallery portfolio whereby a user can clicks on a picture, views it on a modal 
 ## Getting Started.
 These instructions will get you a copy of the project up and running on a local host.
 
-Step 1: git clone https://github.com/BenkiKuu/djangoip1
+Step 1: git clone
 Step 2: Enter the Project root folder
 
 cd gallery/
